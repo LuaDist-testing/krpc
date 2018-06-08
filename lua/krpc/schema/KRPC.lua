@@ -138,6 +138,12 @@ module.STATUS_STREAM_RPCS_FIELD = protobuf.FieldDescriptor()
 module.STATUS_STREAM_RPCS_EXECUTED_FIELD = protobuf.FieldDescriptor()
 module.STATUS_STREAM_RPC_RATE_FIELD = protobuf.FieldDescriptor()
 module.STATUS_TIME_PER_STREAM_UPDATE_FIELD = protobuf.FieldDescriptor()
+module.MULTIPLEXEDREQUEST = protobuf.Descriptor()
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD = protobuf.FieldDescriptor()
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD = protobuf.FieldDescriptor()
+module.MULTIPLEXEDRESPONSE = protobuf.Descriptor()
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD = protobuf.FieldDescriptor()
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD = protobuf.FieldDescriptor()
 
 module.CONNECTIONREQUEST_TYPE_RPC_ENUM.name = 'RPC'
 module.CONNECTIONREQUEST_TYPE_RPC_ENUM.index = 0
@@ -1230,6 +1236,64 @@ module.STATUS.enum_types = {}
 module.STATUS.fields = {module.STATUS_VERSION_FIELD, module.STATUS_BYTES_READ_FIELD, module.STATUS_BYTES_WRITTEN_FIELD, module.STATUS_BYTES_READ_RATE_FIELD, module.STATUS_BYTES_WRITTEN_RATE_FIELD, module.STATUS_RPCS_EXECUTED_FIELD, module.STATUS_RPC_RATE_FIELD, module.STATUS_ONE_RPC_PER_UPDATE_FIELD, module.STATUS_MAX_TIME_PER_UPDATE_FIELD, module.STATUS_ADAPTIVE_RATE_CONTROL_FIELD, module.STATUS_BLOCKING_RECV_FIELD, module.STATUS_RECV_TIMEOUT_FIELD, module.STATUS_TIME_PER_RPC_UPDATE_FIELD, module.STATUS_POLL_TIME_PER_RPC_UPDATE_FIELD, module.STATUS_EXEC_TIME_PER_RPC_UPDATE_FIELD, module.STATUS_STREAM_RPCS_FIELD, module.STATUS_STREAM_RPCS_EXECUTED_FIELD, module.STATUS_STREAM_RPC_RATE_FIELD, module.STATUS_TIME_PER_STREAM_UPDATE_FIELD}
 module.STATUS.is_extendable = false
 module.STATUS.extensions = {}
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.name = 'connection_request'
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.full_name = '.krpc.schema.MultiplexedRequest.connection_request'
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.number = 1
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.index = 0
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.label = 1
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.has_default_value = false
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.default_value = nil
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.message_type = module.CONNECTIONREQUEST
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.type = 11
+module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD.cpp_type = 10
+
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.name = 'request'
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.full_name = '.krpc.schema.MultiplexedRequest.request'
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.number = 2
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.index = 1
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.label = 1
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.has_default_value = false
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.default_value = nil
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.message_type = module.REQUEST
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.type = 11
+module.MULTIPLEXEDREQUEST_REQUEST_FIELD.cpp_type = 10
+
+module.MULTIPLEXEDREQUEST.name = 'MultiplexedRequest'
+module.MULTIPLEXEDREQUEST.full_name = '.krpc.schema.MultiplexedRequest'
+module.MULTIPLEXEDREQUEST.nested_types = {}
+module.MULTIPLEXEDREQUEST.enum_types = {}
+module.MULTIPLEXEDREQUEST.fields = {module.MULTIPLEXEDREQUEST_CONNECTION_REQUEST_FIELD, module.MULTIPLEXEDREQUEST_REQUEST_FIELD}
+module.MULTIPLEXEDREQUEST.is_extendable = false
+module.MULTIPLEXEDREQUEST.extensions = {}
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.name = 'response'
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.full_name = '.krpc.schema.MultiplexedResponse.response'
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.number = 1
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.index = 0
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.label = 1
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.has_default_value = false
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.default_value = nil
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.message_type = module.RESPONSE
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.type = 11
+module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD.cpp_type = 10
+
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.name = 'stream_update'
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.full_name = '.krpc.schema.MultiplexedResponse.stream_update'
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.number = 2
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.index = 1
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.label = 1
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.has_default_value = false
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.default_value = nil
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.message_type = module.STREAMUPDATE
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.type = 11
+module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD.cpp_type = 10
+
+module.MULTIPLEXEDRESPONSE.name = 'MultiplexedResponse'
+module.MULTIPLEXEDRESPONSE.full_name = '.krpc.schema.MultiplexedResponse'
+module.MULTIPLEXEDRESPONSE.nested_types = {}
+module.MULTIPLEXEDRESPONSE.enum_types = {}
+module.MULTIPLEXEDRESPONSE.fields = {module.MULTIPLEXEDRESPONSE_RESPONSE_FIELD, module.MULTIPLEXEDRESPONSE_STREAM_UPDATE_FIELD}
+module.MULTIPLEXEDRESPONSE.is_extendable = false
+module.MULTIPLEXEDRESPONSE.extensions = {}
 
 module.Argument = protobuf.Message(module.ARGUMENT)
 module.Class = protobuf.Message(module.CLASS)
@@ -1243,6 +1307,8 @@ module.Error = protobuf.Message(module.ERROR)
 module.Event = protobuf.Message(module.EVENT)
 module.Exception = protobuf.Message(module.EXCEPTION)
 module.List = protobuf.Message(module.LIST)
+module.MultiplexedRequest = protobuf.Message(module.MULTIPLEXEDREQUEST)
+module.MultiplexedResponse = protobuf.Message(module.MULTIPLEXEDRESPONSE)
 module.Parameter = protobuf.Message(module.PARAMETER)
 module.Procedure = protobuf.Message(module.PROCEDURE)
 module.ProcedureCall = protobuf.Message(module.PROCEDURECALL)
@@ -1260,7 +1326,7 @@ module.Tuple = protobuf.Message(module.TUPLE)
 module.Type = protobuf.Message(module.TYPE)
 
 
-module.MESSAGE_TYPES = {'ConnectionRequest','ConnectionResponse','Request','ProcedureCall','Argument','Response','ProcedureResult','Error','StreamUpdate','StreamResult','Services','Service','Procedure','Parameter','Class','Enumeration','EnumerationValue','Exception','Type','Tuple','List','Set','Dictionary','DictionaryEntry','Stream','Event','Status'}
+module.MESSAGE_TYPES = {'ConnectionRequest','ConnectionResponse','Request','ProcedureCall','Argument','Response','ProcedureResult','Error','StreamUpdate','StreamResult','Services','Service','Procedure','Parameter','Class','Enumeration','EnumerationValue','Exception','Type','Tuple','List','Set','Dictionary','DictionaryEntry','Stream','Event','Status','MultiplexedRequest','MultiplexedResponse'}
 module.ENUM_TYPES = {}
 
 return module
