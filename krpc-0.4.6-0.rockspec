@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "krpc"
-version = "0.4.5-0"
+version = "0.4.6-0"
 -- LuaDist source
 source = {
-  tag = "0.4.5-0",
+  tag = "0.4.6-0",
   url = "git://github.com/LuaDist-testing/krpc.git"
 }
 -- Original source
 -- source = {
---   url = "https://s3.amazonaws.com/krpc/lua/krpc-0.4.5.zip"
+--   url = "https://s3.amazonaws.com/krpc/lua/krpc-0.4.6.zip"
 -- }
 description = {
   summary = "Lua client library for kRPC",
